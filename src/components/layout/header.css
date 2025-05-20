@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.header-container {
+  @apply mx-auto flex items-center justify-between p-6 sm:container sm:py-6;
+}
+
+.opened {
+  @apply absolute top-22 left-0 mx-auto w-full border-b-1 border-solid border-gray-200 bg-white px-6 py-3 text-left sm:top-18;
+
+  li {
+    @apply mb-4;
+  }
+}

@@ -19,11 +19,11 @@ export function Hamburger({ defaultIsOpen, onClick }: HamburgerProps) {
     <button
       onClick={handleClick}
       type="button"
-      className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white sm:block md:hidden"
+      className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white sm:-m-2 sm:block md:hidden"
       aria-controls="mobile-menu"
       aria-expanded="false"
     >
-      <span className="absolute -inset-0.5"></span>
+      <span className="absolute -inset-0.25"></span>
       <span className="sr-only">Open main menu</span>
       {isOpen ? (
         <CloseIcon className="size-6" />
