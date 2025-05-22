@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.footer-container {
+  @apply mx-auto flex flex-col items-center justify-between gap-4 p-6 sm:container sm:flex-row sm:py-6;
+}
+
+.media-icon {
+  @apply size-8 fill-gray-500 transition-colors duration-300 hover:fill-gray-400;
+}
