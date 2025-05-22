@@ -1,1 +1,16 @@
-#root {}
+@import "tailwindcss";
+
+#root {
+}
+
+.heading-1 {
+  @apply mb-8 text-5xl font-extrabold;
+}
+
+.heading-2 {
+  @apply mb-8 text-4xl font-bold;
+}
+
+.heading-3 {
+  @apply mb-4 text-3xl font-bold;
+}
