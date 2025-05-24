@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="31.309 1.068 38 38.607" xmlns="http://www.w3.org/2000/svg"  data-logo="logo" width="32" height="32"  
+xmlns:bx="https://boxy-svg.com">
+  <g transform="translate(0, 1) rotate(0)" id="logogram" style="opacity: 1;">
+    <path fill="#E56F8C" d="M31.3536 0.0799581L69.9128 38.6391V0.0799561H59.478V12.2538L47.3041 0.0799561L31.3536 0.0799581Z"/>
+  </g>
+  <defs>
+    <bx:grid x="0.267" y="1.068" width="31.042" height="39.675"/>
+    <bx:export>
+      <bx:file format="svg"/>
+    </bx:export>
+  </defs>
+</svg>
