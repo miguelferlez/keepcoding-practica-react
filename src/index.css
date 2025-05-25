@@ -1,4 +1,13 @@
 @import "tailwindcss";
 
 :root {
+  --color-primary: rgb(229, 111, 140);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@theme {
+  --color-primary: var(--color-primary);
 }

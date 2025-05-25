@@ -2,6 +2,8 @@ import "./header.css";
 import { useEffect, useState } from "react";
 import { Hamburger } from "../ui/hamburger";
 import clsx from "clsx";
+import { Link } from "react-router";
+import LogoIcon from "../icons/logo-icon";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -29,10 +31,9 @@ function Header() {
   return (
     <header className="mb-4 border-b-1 border-gray-200">
       <div className="header-container">
-        {/* TODO <Link to="/"><div><img/></div><Link> */}
-        <a href="/">
-          <img src="/" alt="logo" />
-        </a>
+        <Link to="/">
+          <LogoIcon className="fill-primary" />
+        </Link>
         <nav>
           {isMobile && (
             <Hamburger
