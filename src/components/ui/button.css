@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "../../index.css";
+
+.btn {
+  @apply rounded-full px-6 py-2.5 font-bold transition-all duration-300 ease-in-out disabled:pointer-events-none disabled:opacity-50;
+}
+
+.btn-primary {
+  @apply bg-primary border-primary hover:bg-primary-darker hover:border-primary-darker border-1 text-white;
+}
+
+.btn-secondary {
+  @apply border-primary hover:bg-primary-darker hover:border-primary-darker text-primary border-1 bg-transparent hover:text-white;
+}
+
+.btn-remove {
+  @apply border-error hover:bg-error-darker hover:border-error-darker text-error border-1 bg-transparent hover:text-white;
+}
