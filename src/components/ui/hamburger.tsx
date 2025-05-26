@@ -19,7 +19,7 @@ export function Hamburger({ defaultIsOpen, onClick }: HamburgerProps) {
     <button
       onClick={handleClick}
       type="button"
-      className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white sm:-m-2 sm:block md:hidden"
+      className="hover:bg-primary relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-white sm:-m-2 sm:block md:hidden"
       aria-controls="mobile-menu"
       aria-expanded="false"
     >

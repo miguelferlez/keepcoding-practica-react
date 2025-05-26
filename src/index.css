@@ -1,13 +1,60 @@
 @import "tailwindcss";
 
+/* Custom variables and common element settings */
+
 :root {
-  --color-primary: rgb(229, 111, 140);
+  --color-primary: #e56f8c;
+  --color-error: rgb(210, 25, 25);
+  --color-success: rgb(25, 210, 85);
 }
 
 * {
   box-sizing: border-box;
 }
 
+header,
+footer {
+  @apply flex h-[90px] items-center justify-center;
+}
+
+button {
+  cursor: pointer;
+}
+
 @theme {
   --color-primary: var(--color-primary);
+  --color-primary-lighter: color-mix(
+    in srgb-linear,
+    var(--color-primary) 100%,
+    #ffffff 50%
+  );
+  --color-primary-darker: color-mix(
+    in srgb-linear,
+    var(--color-primary) 100%,
+    #000000 50%
+  );
+
+  --color-error: var(--color-error);
+  --color-error-lighter: color-mix(
+    in srgb-linear,
+    var(--color-error) 100%,
+    #ffffff 50%
+  );
+  --color-error-darker: color-mix(
+    in srgb-linear,
+    var(--color-error) 100%,
+    #000000 50%
+  );
+
+  --color-success: var(--color-success);
+  --color-success-lighter: color-mix(
+    in srgb-linear,
+    var(--color-success) 100%,
+    #ffffff 50%
+  );
+  --color-success-darker: color-mix(
+    in srgb-linear,
+    var(--color-success) 100%,
+    #000000 50%
+  );
 }

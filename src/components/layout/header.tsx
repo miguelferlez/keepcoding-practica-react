@@ -1,8 +1,9 @@
 import "./header.css";
+import "../ui/button.css";
 import { useEffect, useState } from "react";
 import { Hamburger } from "../ui/hamburger";
 import clsx from "clsx";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import LogoIcon from "../icons/logo-icon";
 
 function Header() {
@@ -47,16 +48,19 @@ function Header() {
                 hidden: !isNavOpen,
                 opened: isNavOpen,
               },
-              "md:flex md:gap-8",
+              "md:flex md:gap-6",
             )}
           >
             <li>
-              {/* TODO <NavLink to="/adverts/new" end>Create advert</NavLink> */}
-              <a href="">Create advert</a>
+              <NavLink to="#" className="btn btn-secondary">
+                Create advert
+              </NavLink>
             </li>
             <li>
               {/* TODO <AuthButton /> */}
-              <a href="">Log</a>
+              <a href="" className="btn btn-primary">
+                Log in
+              </a>
             </li>
           </ul>
         </nav>
