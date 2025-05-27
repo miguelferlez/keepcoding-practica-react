@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 function NotFoundPage() {
   return (
     <section>
@@ -9,11 +11,13 @@ function NotFoundPage() {
           <p className="mb-4 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
             Something's missing.
           </p>
-          <p className="mb-4 text-lg font-light text-gray-500">
+          <p className="mb-8 text-lg font-light text-gray-500">
             Sorry, we can't find that page. You'll find lots to explore on the
             home page.
           </p>
-          {/* TODO <Link to="/">Back to Homepage</Link> */}
+          <Link to="/" className="btn btn-remove">
+            Back to Homepage
+          </Link>
         </div>
       </div>
     </section>
