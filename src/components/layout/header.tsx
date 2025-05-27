@@ -5,6 +5,7 @@ import { Hamburger } from "../ui/hamburger";
 import clsx from "clsx";
 import { Link, NavLink } from "react-router";
 import LogoIcon from "../icons/logo-icon";
+import AuthButton from "../../pages/auth/auth-button";
 
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -52,15 +53,12 @@ function Header() {
             )}
           >
             <li>
-              <NavLink to="#" className="btn btn-secondary">
+              <NavLink to="/adverts/new" className="btn btn-secondary">
                 Create advert
               </NavLink>
             </li>
             <li>
-              {/* TODO <AuthButton /> */}
-              <a href="" className="btn btn-primary">
-                Log in
-              </a>
+              <AuthButton />
             </li>
           </ul>
         </nav>

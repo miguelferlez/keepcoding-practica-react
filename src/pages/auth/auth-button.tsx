@@ -1,7 +1,7 @@
 import Button from "../../components/ui/button";
 import { useAuth } from "./context";
 import { logout } from "../../services/auth";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 
 const AuthButton = () => {
   const { isLogged, onLogout } = useAuth();
@@ -13,9 +13,9 @@ const AuthButton = () => {
   return isLogged ? (
     <Button label="Sign out" variant="secondary" onClick={handleLogout} />
   ) : (
-    <Link className="btn btn-primary" to="/login">
+    <NavLink className="btn btn-primary" to="/login">
       Log in
-    </Link>
+    </NavLink>
   );
 };
 

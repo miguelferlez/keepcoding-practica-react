@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import DocumentPlusIncon from "../../components/icons/document-plus-icon";
 
 export const EmptyAdvertsWarning = () => (
@@ -8,7 +9,9 @@ export const EmptyAdvertsWarning = () => (
       </div>
       <h1 className="mb-2 text-lg text-gray-800">No adverts... yet</h1>
       <p className="mb-4 text-gray-500">Get started by creating a new one!</p>
-      <button className="btn btn-secondary">Create advert</button>
+      <Link to="/adverts/new" className="btn btn-secondary">
+        Create advert
+      </Link>
     </div>
   </section>
 );
