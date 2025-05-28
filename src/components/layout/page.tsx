@@ -8,7 +8,7 @@ interface PageProps {
 function Page({ title, children }: PageProps) {
   return (
     <div className="container mx-auto mb-8 px-6">
-      <h2 className="mb-8 text-4xl font-bold">{title}</h2>
+      <h2 className="heading-2">{title}</h2>
       {children}
     </div>
   );
