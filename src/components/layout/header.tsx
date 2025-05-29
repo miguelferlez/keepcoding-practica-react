@@ -49,7 +49,7 @@ function Header() {
                 hidden: !isNavOpen,
                 opened: isNavOpen,
               },
-              "md:flex md:gap-6",
+              "md:flex md:items-center md:gap-6",
             )}
           >
             <li>

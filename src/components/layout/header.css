@@ -5,9 +5,9 @@
 }
 
 .opened {
-  @apply absolute top-22 left-0 mx-auto w-full border-b-1 border-solid border-gray-200 bg-white px-6 py-3 text-left sm:top-18;
+  @apply absolute top-18 left-0 mx-auto w-full border-b-1 border-solid border-gray-200 bg-white px-6 py-3 text-left;
 
   li {
-    @apply mb-7;
+    @apply mb-4 flex;
   }
 }

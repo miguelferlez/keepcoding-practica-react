@@ -2,7 +2,7 @@
 @import "../../index.css";
 
 .btn {
-  @apply rounded-full px-6 py-2.5 font-bold transition-all duration-300 ease-in-out disabled:pointer-events-none disabled:opacity-50;
+  @apply flex h-[41px] items-center justify-center rounded-full px-6 py-2.5 font-bold transition-all duration-300 ease-in-out disabled:pointer-events-none disabled:opacity-50;
 }
 
 .btn-primary {
