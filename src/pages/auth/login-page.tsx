@@ -12,13 +12,13 @@ import { AxiosError } from "axios";
 
 function LoginPage() {
   const [credentials, setCredentials] = useState({
-    username: "",
+    email: "",
     password: "",
   });
-  const { username, password } = credentials;
+  const { email, password } = credentials;
   const { onLogin } = useAuth();
   const [isFetching, setIsFetching] = useState(false);
-  const isDisabled = !username || !password || isFetching;
+  const isDisabled = !email || !password || isFetching;
   const [error, setError] = useState<{ message: string } | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -61,8 +61,8 @@ function LoginPage() {
             label="Username"
             icon={<EnvelopeIcon className="size-6" />}
             type="text"
-            name="username"
-            value={username}
+            name="email"
+            value={email}
             onChange={handleChange}
             placeholder="user@email.com"
             required
