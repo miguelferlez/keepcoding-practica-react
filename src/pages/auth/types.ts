@@ -1,8 +1,14 @@
-export interface Credentials {
-  email: string;
-  password: string;
-}
+import { z } from "zod";
 
-export interface Login {
-  accessToken: string;
-}
+const CredentialSchema = z.object({
+  email: z.string(),
+  password: z.string(),
+});
+
+const LoginSchema = z.object({
+  accessToken: z.string(),
+});
+
+export type Credentials = z.infer<typeof CredentialSchema>;
+
+export type Login = z.infer<typeof LoginSchema>;
