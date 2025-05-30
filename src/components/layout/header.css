@@ -5,7 +5,7 @@
 }
 
 .opened {
-  @apply absolute top-18 left-0 mx-auto w-full border-b-1 border-solid border-gray-200 bg-white px-6 py-3 text-left;
+  @apply absolute top-18 left-0 z-998 mx-auto w-full border-b-1 border-solid border-gray-200 bg-white px-6 py-3 text-left;
 
   li {
     @apply mb-4 flex;

@@ -31,7 +31,7 @@ function Header() {
   }, []);
 
   return (
-    <header className="mb-4 border-b-1 border-gray-200">
+    <header className="z-999 mb-4 border-b-1 border-gray-200">
       <div className="header-container">
         <Link to="/">
           <LogoIcon className="fill-primary" />

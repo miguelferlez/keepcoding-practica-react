@@ -7,7 +7,7 @@ function Layout() {
     <div>
       <h1 className="sr-only">Vited</h1>
       <Header />
-      <main className="h-[calc(100vh-196px)]">
+      <main>
         <Outlet />
       </main>
       <Footer />

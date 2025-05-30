@@ -15,9 +15,11 @@ function NotFoundPage() {
             Sorry, we can't find that page. You'll find lots to explore on the
             home page.
           </p>
-          <Link to="/" className="btn btn-remove">
-            Back to Homepage
-          </Link>
+          <div className="flex justify-center">
+            <Link to="/" className="btn btn-remove">
+              Back to Homepage
+            </Link>
+          </div>
         </div>
       </div>
     </section>

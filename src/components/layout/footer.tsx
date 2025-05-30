@@ -5,7 +5,7 @@ function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t-1 border-gray-200">
+    <footer className="z-999 w-full border-t-1 border-gray-200">
       <div className="footer-container">
         <span className="text-gray-500">{`© ${year} KeepCoding. All Rights Reserved.`}</span>
         <div>
