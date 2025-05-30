@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "../../index.css";
+
+.photo-container {
+  @apply mb-4 aspect-square w-full rounded-md bg-gray-200 object-cover duration-300 hover:opacity-75 hover:transition-opacity lg:aspect-auto lg:h-80;
+}
+
+.type {
+  @apply rounded-md bg-white px-2.5 py-1;
+}
+
+.tag {
+  @apply bg-primary-lighter rounded-md px-2 py-0.5 text-sm font-medium text-gray-500;
+}
