@@ -89,17 +89,18 @@ function NewAdvertPage() {
     try {
       setIsFetching(true);
       const createdAdvert = await createAdvert(newAdvert);
+      navigate(`/adverts/${createdAdvert.id}`);
     } catch (error) {
       if (error instanceof AxiosError) {
-        console.log(error);
-
         setError({
           message:
-            error.status === 500
-              ? "Unable to fulfill your request, please try again later."
-              : (error.response?.data?.message ??
-                error.message ??
-                "Something wrong happened"),
+            error.status === 401
+              ? navigate("/login", { replace: true })
+              : error.status === 500
+                ? "Unable to fulfill your request, please try again later."
+                : (error.response?.data?.message ??
+                  error.message ??
+                  "Something wrong happened"),
         });
       }
     } finally {

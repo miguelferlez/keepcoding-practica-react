@@ -88,17 +88,16 @@ function LoginPage() {
             />
           </div>
         </form>
-        {error &&
-          error.message.map((message) => (
-            <Alert
-              type="error"
-              onClick={() => {
-                setError(null);
-              }}
-            >
-              {message}
-            </Alert>
-          ))}
+        {error && (
+          <Alert
+            type="error"
+            onClick={() => {
+              setError(null);
+            }}
+          >
+            {error.message}
+          </Alert>
+        )}
       </div>
     </div>
   );

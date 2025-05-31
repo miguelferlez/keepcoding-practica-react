@@ -2,7 +2,7 @@ import MagnifyingGlassIcon from "../../components/icons/magnifying-glass-icon";
 
 export const NotFoundAdvertsWarning = () => (
   <section>
-    <div className="mx-auto flex w-full max-w-sm flex-col px-4 text-center">
+    <div className="mx-auto flex h-[calc(100vh-300px)] w-full max-w-sm flex-col px-4 text-center">
       <div className="mx-auto mb-3 rounded-full bg-blue-100 p-3">
         <MagnifyingGlassIcon className="size-6 text-blue-500" />
       </div>
