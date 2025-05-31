@@ -23,20 +23,28 @@ export const getAdvertTags = async () => {
   return response.data;
 };
 
-export const createAdvert = async (
-  name: string,
-  sale: boolean,
-  price: number,
-  tags: string[],
-  photo: File | null,
-) => {
-  const response = await client.post<Advert>(ADVERT_URL, {
-    name,
-    sale,
-    price,
-    tags,
-    photo,
-  });
+export const createAdvert = async (advert: {
+  name: string;
+  sale: boolean;
+  price: number;
+  tags: string[];
+  photo: File | undefined;
+}) => {
+  const response = await client.post<Advert>(
+    ADVERT_URL,
+    {
+      name: advert.name,
+      sale: advert.sale,
+      price: advert.price,
+      tags: advert.tags,
+      photo: advert.photo,
+    },
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    },
+  );
 
   return response.data;
 };

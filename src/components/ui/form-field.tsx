@@ -19,13 +19,20 @@ const FormField = ({ icon, label, ...props }: FormFieldProps) => {
             {icon}
           </div>
         )}
-        <input
-          {...props}
-          className={clsx(
-            { "pl-12": icon, "pl-4": !icon },
-            "block h-11 w-full rounded-full border border-gray-300 bg-transparent pr-4 font-normal text-gray-900 placeholder-gray-400",
-          )}
-        />
+        {props.type === "file" ? (
+          <input
+            {...props}
+            className="file:border-primary file:text-primary border-primary hover:file:bg-primary h-11 w-full cursor-pointer rounded-full border-1 bg-transparent font-normal text-gray-900 placeholder-gray-400 duration-300 file:mr-2 file:cursor-pointer file:rounded-l-full file:border-r-1 file:p-[9px] file:font-bold hover:transition-all hover:file:text-white"
+          />
+        ) : (
+          <input
+            {...props}
+            className={clsx(
+              { "pl-12": icon, "pl-4": !icon },
+              "flex h-11 w-full items-center rounded-full border border-gray-300 bg-transparent pr-4 font-normal text-gray-900 placeholder-gray-400",
+            )}
+          />
+        )}
       </div>
     </div>
   );
