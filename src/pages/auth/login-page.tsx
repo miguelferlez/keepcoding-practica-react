@@ -19,7 +19,7 @@ function LoginPage() {
   const { onLogin } = useAuth();
   const [isFetching, setIsFetching] = useState(false);
   const isDisabled = !email || !password || isFetching;
-  const [error, setError] = useState<{ message: string } | null>(null);
+  const [error, setError] = useState<{ message: string[] } | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -42,9 +42,11 @@ function LoginPage() {
       if (error instanceof AxiosError) {
         setError({
           message:
-            error.response?.data?.message ??
-            error.message ??
-            "Somethin wrong happened",
+            error.status === 401
+              ? "Wrong credentials, please try again"
+              : (error.response?.data?.message ??
+                error.message ??
+                "Something wrong happened"),
         });
       }
     } finally {
@@ -86,16 +88,17 @@ function LoginPage() {
             />
           </div>
         </form>
-        {error && (
-          <Alert
-            type="error"
-            onClick={() => {
-              setError(null);
-            }}
-          >
-            {error.message}
-          </Alert>
-        )}
+        {error &&
+          error.message.map((message) => (
+            <Alert
+              type="error"
+              onClick={() => {
+                setError(null);
+              }}
+            >
+              {message}
+            </Alert>
+          ))}
       </div>
     </div>
   );

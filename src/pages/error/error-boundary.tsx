@@ -44,9 +44,11 @@ class ErrorBoundary extends Component<
                     get in touch with us and open an issue for this project.
                   </a>
                 </p>
-                <a href="/" className="btn btn-remove">
-                  Try again
-                </a>
+                <div className="flex justify-center">
+                  <a href="/" className="btn btn-remove">
+                    Try again
+                  </a>
+                </div>
                 <div className="mt-8 max-h-80 overflow-scroll rounded-xl bg-gray-100 p-4 text-left">
                   <code>{error.message}</code>
                   <code>{JSON.stringify(info)}</code>
