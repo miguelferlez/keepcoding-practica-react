@@ -2,6 +2,7 @@ import "./App.css";
 import Loader from "./components/ui/loader";
 import Layout from "./components/layout/layout";
 import AdvertsPage from "./pages/adverts/adverts-page";
+import NewAdvertPage from "./pages/adverts/new-advert-page";
 // import LoginPage from "./pages/auth/login-page";
 import NotFoundPage from "./pages/error/not-found-page";
 import { Navigate, Route, Routes } from "react-router";
@@ -23,6 +24,7 @@ function App() {
       />
       <Route path="/adverts" element={<Layout />}>
         <Route index element={<AdvertsPage />} />
+        <Route path="/adverts/new" element={<NewAdvertPage />} />
       </Route>
       <Route path="/" element={<Navigate to="/adverts" />} />
       <Route path="/not-found" element={<NotFoundPage />} />
