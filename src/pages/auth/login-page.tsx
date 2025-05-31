@@ -17,6 +17,7 @@ function LoginPage() {
   });
   const { email, password } = credentials;
   const { onLogin } = useAuth();
+  const [remember, setRemember] = useState(false);
   const [isFetching, setIsFetching] = useState(false);
   const isDisabled = !email || !password || isFetching;
   const [error, setError] = useState<{ message: string[] } | null>(null);
@@ -35,7 +36,7 @@ function LoginPage() {
 
     try {
       setIsFetching(true);
-      await login(credentials);
+      await login(credentials, remember);
       onLogin();
       navigate(location.state?.from ?? "/", { replace: true });
     } catch (error) {
@@ -79,6 +80,20 @@ function LoginPage() {
             required
             placeholder="********"
           />
+          <div className="flex items-center">
+            <input
+              id="remember"
+              type="checkbox"
+              onChange={() => {
+                setRemember((prevRemember) => !prevRemember);
+              }}
+              checked={remember}
+              className="accent-primary h-4 w-4 rounded-sm border-gray-300"
+            />
+            <label htmlFor="remember" className="ms-2">
+              Remember me
+            </label>
+          </div>
           <div className="mt-8 flex flex-col">
             <Button
               label="Log in"
