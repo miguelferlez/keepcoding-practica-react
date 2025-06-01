@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "../../index.css";
+
+.image-container {
+  @apply h-auto w-full rounded-lg;
+}
+
+.sale-container {
+  @apply bg-primary-lighter rounded-xl p-3;
+}
+
+.tag {
+  @apply bg-primary-lighter rounded-md px-2 py-0.5 text-sm font-medium text-gray-500;
+}

@@ -1,8 +1,7 @@
 // TODO 6. advert items
 import "./advert-card.css";
+import placeholderImg from "../../assets/image-placeholder.jpg";
 import type { Advert } from "./types";
-
-const PLACEHOLDER_IMG = "./src/assets/image-placeholder.jpg";
 
 interface AdvertCardProps {
   advert: Advert;
@@ -14,7 +13,7 @@ function AdvertCard({ advert }: AdvertCardProps) {
       {advert.photo ? (
         <img src={advert.photo} className="photo-container" />
       ) : (
-        <img src={PLACEHOLDER_IMG} className="photo-container" />
+        <img src={placeholderImg} className="photo-container" />
       )}
       <div className="mb-1 flex items-center justify-between">
         <span className="inset-0 text-gray-500">{advert.name}</span>
