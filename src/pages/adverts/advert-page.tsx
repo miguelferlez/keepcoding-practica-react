@@ -60,15 +60,6 @@ function AdvertPage() {
       }
     }
     getAdvert();
-    // getAdvertById(params.advertId)
-    //   .then((advert) => setAdvert(advert))
-    //   .catch((error) => {
-    //     if (error instanceof AxiosError) {
-    //       if (error.status === 404) {
-    //         navigate("/not-found", { replace: true });
-    //       }
-    //     }
-    //   });
   }, [params.advertId, navigate]);
   return (
     <Page title={`${advert?.name}`}>
@@ -83,7 +74,7 @@ function AdvertPage() {
             {message}
           </Alert>
         ))}
-      <div className="flex">
+      <div className="flex flex-wrap gap-4 sm:flex-nowrap">
         <div className="w-full px-4 md:w-1/2">
           {advert?.photo === null ? (
             <img src={placeholderImg} className="image-container" />
