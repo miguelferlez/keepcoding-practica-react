@@ -2,7 +2,7 @@
 @import "../../index.css";
 
 .image-container {
-  @apply h-auto w-full rounded-lg;
+  @apply mb-4 h-auto max-h-[550px] w-full rounded-lg object-cover;
 }
 
 .sale-container {

@@ -1,6 +1,6 @@
 import "./advert-page.css";
 import Page from "../../components/layout/page";
-import { getAdvertById } from "../../services/adverts";
+import { deleteAdvert, getAdvertById } from "../../services/adverts";
 import type { Advert } from "./types";
 import { useNavigate, useParams } from "react-router";
 import { useEffect, useState } from "react";
@@ -8,29 +8,81 @@ import { AxiosError } from "axios";
 import placeholderImg from "../../assets/image-placeholder.jpg";
 import notFoundImg from "../../assets/image-not-found-placeholder.jpg";
 import Button from "../../components/ui/button";
+import DeleteAdvertWarning from "./delete-advert-warning";
+import Alert from "../../components/ui/alert";
+import { formatDistanceToNow } from "date-fns";
 
 function AdvertPage() {
   const params = useParams();
   const [advert, setAdvert] = useState<Advert | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [error, setError] = useState<{ message: string[] } | null>(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!params.advertId) {
-      return;
-    } else {
-      getAdvertById(params.advertId)
-        .then((advert) => setAdvert(advert))
-        .catch((error) => {
-          if (error instanceof AxiosError) {
-            if (error.status === 404) {
-              navigate("/not-found", { replace: true });
-            }
-          }
+  const handleModalClick = () => {
+    setIsModalOpen((prev) => !prev);
+  };
+
+  const handleDelete = async () => {
+    setIsModalOpen(false);
+    try {
+      await deleteAdvert(advert!.id);
+      navigate("/adverts", { replace: true });
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        setError({
+          message:
+            error.status === 401
+              ? navigate("/login", { replace: true })
+              : (error.response?.data?.message ??
+                error.message ??
+                "Something wrong happened"),
         });
+      }
     }
+  };
+
+  useEffect(() => {
+    async function getAdvert() {
+      try {
+        if (!params.advertId) {
+          return;
+        } else {
+          const response = await getAdvertById(params.advertId);
+          setAdvert(response);
+        }
+      } catch (error) {
+        if (error instanceof AxiosError) {
+          if (error.status === 404) {
+            navigate("/not-found", { replace: true });
+          }
+        }
+      }
+    }
+    getAdvert();
+    // getAdvertById(params.advertId)
+    //   .then((advert) => setAdvert(advert))
+    //   .catch((error) => {
+    //     if (error instanceof AxiosError) {
+    //       if (error.status === 404) {
+    //         navigate("/not-found", { replace: true });
+    //       }
+    //     }
+    //   });
   }, [params.advertId, navigate]);
   return (
     <Page title={`${advert?.name}`}>
+      {error &&
+        error.message.map((message) => (
+          <Alert
+            type="error"
+            onClick={() => {
+              setError(null);
+            }}
+          >
+            {message}
+          </Alert>
+        ))}
       <div className="flex">
         <div className="w-full px-4 md:w-1/2">
           {advert?.photo === null ? (
@@ -40,6 +92,11 @@ function AdvertPage() {
           ) : (
             <img src={notFoundImg} className="image-container" />
           )}
+          <Button
+            label="Delete this advert"
+            variant="remove"
+            onClick={handleModalClick}
+          />
         </div>
         <div className="flex w-full flex-col items-baseline gap-3 px-4 md:w-1/2">
           {advert?.sale === true ? (
@@ -61,11 +118,21 @@ function AdvertPage() {
               ))}
             </div>
           </div>
-          <div>
-            <Button label="Delete this advert" variant="remove" />
-          </div>
+          {advert?.createdAt && (
+            <time dateTime={advert?.createdAt}>
+              <p className="text-gray-500">
+                Advert created{" "}
+                {formatDistanceToNow(new Date(advert!.createdAt))} ago.
+              </p>
+            </time>
+          )}
         </div>
       </div>
+      <DeleteAdvertWarning
+        defaultIsOpen={isModalOpen}
+        onConfirm={handleDelete}
+        onClose={handleModalClick}
+      />
     </Page>
   );
 }

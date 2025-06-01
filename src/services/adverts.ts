@@ -60,3 +60,15 @@ export const createAdvert = async (advert: {
 
   return response.data;
 };
+
+export const deleteAdvert = async (advertId: string) => {
+  const url = `${ADVERT_URL}/${advertId}`;
+  const response = await client.delete<Advert>(url);
+  const accessToken = storage.get("auth");
+
+  if (accessToken) {
+    setAuthorizationHeader(accessToken);
+  }
+
+  return response.data;
+};
