@@ -1,4 +1,4 @@
-# Proyecto
+# Vited
 
 Proyecto de práctica del módulo _Fundamentos de React_ de **KeepCoding**.
 
