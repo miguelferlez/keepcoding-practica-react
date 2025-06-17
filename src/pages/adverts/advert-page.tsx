@@ -8,9 +8,9 @@ import { AxiosError } from "axios";
 import placeholderImg from "../../assets/image-placeholder.jpg";
 import notFoundImg from "../../assets/image-not-found-placeholder.jpg";
 import Button from "../../components/ui/button";
-import DeleteAdvertWarning from "./delete-advert-warning";
 import Alert from "../../components/ui/alert";
 import { formatDistanceToNow } from "date-fns";
+import WarningPopup from "../../components/ui/warning-popup";
 
 function AdvertPage() {
   const params = useParams();
@@ -119,7 +119,9 @@ function AdvertPage() {
           )}
         </div>
       </div>
-      <DeleteAdvertWarning
+      <WarningPopup
+        title="Are you sure?"
+        text="This advert will be removed permanently."
         defaultIsOpen={isModalOpen}
         onConfirm={handleDelete}
         onClose={handleModalClick}
