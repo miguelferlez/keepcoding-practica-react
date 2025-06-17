@@ -29,7 +29,7 @@ function NewAdvertPage() {
     tags: [],
     photo: undefined,
   });
-  const [advertTags, setAdvertTags] = useState<String[]>([]);
+  const [advertTags, setAdvertTags] = useState<string[]>([]);
   const fileRef = useRef<File | undefined>(undefined);
   const { name, sale, price, tags } = newAdvert;
   const [isFetching, setIsFetching] = useState(false);

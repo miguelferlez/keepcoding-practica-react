@@ -13,9 +13,9 @@ import ChoiceField from "../../components/ui/choice-field";
 
 function AdvertsPage() {
   const [adverts, setAdverts] = useState<Advert[]>([]);
-  const [advertTags, setAdvertTags] = useState<String[]>([]);
+  const [advertTags, setAdvertTags] = useState<string[]>([]);
   const [search, setSearch] = useState("");
-  const [selectedTags, setSelectedTags] = useState<String[]>([]);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const filterAdverts = adverts.filter((advert) => {
     const advertName = advert.name.toLowerCase();

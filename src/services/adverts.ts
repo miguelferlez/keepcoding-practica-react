@@ -30,7 +30,7 @@ export const getAdvertById = async (advertId: string) => {
 
 export const getAdvertTags = async () => {
   const url = `${ADVERT_URL}/tags`;
-  const response = await client.get<Array<String>>(url);
+  const response = await client.get<Array<string>>(url);
 
   return response.data;
 };
