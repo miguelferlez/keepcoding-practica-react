@@ -1,4 +1,3 @@
-// TODO 6. advert items
 import "./advert-card.css";
 import placeholderImg from "../../assets/image-placeholder.jpg";
 import type { Advert } from "./types";

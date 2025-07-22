@@ -85,7 +85,6 @@ function NewAdvertPage() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    console.log(newAdvert);
     try {
       setIsFetching(true);
       const createdAdvert = await createAdvert(newAdvert);

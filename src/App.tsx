@@ -9,7 +9,6 @@ import NotFoundPage from "./pages/error/not-found-page";
 import { Navigate, Route, Routes } from "react-router";
 import { lazy, Suspense } from "react";
 import RequireAuth from "./pages/auth/require-auth";
-// TODO 5. apply auth provider and require auth in their sites
 
 const LoginPage = lazy(() => import("./pages/auth/login-page"));
 const AdvertsPage = lazy(() => import("./pages/adverts/adverts-page"));
